@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: nop-cont
-          image: manugatla/nopcommerce
+          image: kiranteja623/nopcommerce:28.0
           ports:
             - containerPort: 5000
 ---
@@ -37,3 +37,4 @@ spec:
     - port: 5000
       protocol: TCP
       targetPort: 5000
+  type: LoadBalancer
