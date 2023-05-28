@@ -4,7 +4,7 @@ pipeline {
         stage('vcs') {
             steps{
                 git branch: 'main',
-                url: 'https://github.com/manohargatla/jenkins-k8s-deploy.git'
+                url: 'https://github.com/Kiranteja623/jenkins-k8s-deploy.git'
             }
             
         }
