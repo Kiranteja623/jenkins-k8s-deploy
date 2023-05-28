@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build image') {
             steps {
-                sh 'docker image build -t nopcommerce:28.0 .'
+                sh 'docker image build -t nopcommerce:28.0 /home/ubuntu/root/workspace/nopcompipeline'
                 sh 'docker tag nopcommerce:28.0 kiranteja623/nopcommerce:28.0'
                 sh 'docker push kiranteja623/nopcommerce:28.0'
             }
