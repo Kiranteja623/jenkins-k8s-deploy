@@ -1,8 +1,5 @@
 pipeline {
-    agent 'any'
-    environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-    }
+    agent { node {label 'ubuntu'}
       stages {
         stage('vcs') {
             steps{
@@ -13,9 +10,9 @@ pipeline {
         }
         stage('build image') {
             steps {
-                sh 'docker image build -t nopcommerce:1.0 .'
-                sh 'docker tag nopcommerce:1.0 manugatla/nopcommerce:1.0'
-                sh 'docker push manugatla/nop:latest'
+                sh 'docker image build -t nopcommerce:28.0 .'
+                sh 'docker tag nopcommerce:28.0 kiranteja623/nopcommerce:28.0'
+                sh 'docker push kiranteja623/nopcommerce:28.0'
             }
         }
         stage('deploying application') {
